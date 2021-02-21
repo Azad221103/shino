@@ -5,6 +5,7 @@
 
 #include "add/adder.hpp"
 
+
 TEST_CASE("1+2=3") {
     int a = 1;
     int b = 2;

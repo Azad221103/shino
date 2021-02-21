@@ -2,9 +2,9 @@
 // Created by batkiz on 2021/2/20.
 //
 #include "add/adder.hpp"
-#include "Greeter/Greeter.hpp"
+#include "fmt/core.h"
 
 int main() {
-    Greeter::Greeter::Greet();
+    fmt::print("isdir: {}", adder::adder::isdir(R"(C:\code)"));
     return 0;
 }

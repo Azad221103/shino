@@ -23,17 +23,23 @@ endif()
 
 include(cmake/CPM.cmake)
 
+# 打 log 用的
 CPMAddPackage(
         NAME spdlog
         GIT_REPOSITORY https://github.com.cnpmjs.org/gabime/spdlog
         VERSION 1.8.2
 )
 
+# 格式化字符串、格式化输出
 CPMAddPackage(
         NAME fmt
         GIT_TAG 6.1.2
         GIT_REPOSITORY https://github.com.cnpmjs.org/fmtlib/fmt
 )
+
+# ZLMediakit（流媒体协议提供框架）
+add_subdirectory(ZLMediaKit)
+include_directories(ZLMediaKit/src ZLMediaKit/3rdpart/ZLToolKit/src)
 
 # ---- Add source files ----
 
@@ -50,7 +56,13 @@ target_compile_options(Shino PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissi
 
 
 # Link dependencies
-target_link_libraries(Shino PUBLIC spdlog fmt::fmt)
+# 每次添加第三方依赖后，要在这里添加链接
+target_link_libraries(Shino PUBLIC
+        spdlog
+        fmt::fmt
+        zlmediakit
+        zltoolkit
+)
 
 target_include_directories(
         Shino PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>

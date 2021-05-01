@@ -26,7 +26,7 @@ include(cmake/CPM.cmake)
 # 打 log 用的
 CPMAddPackage(
         NAME spdlog
-        GIT_REPOSITORY https://github.com.cnpmjs.org/gabime/spdlog
+        GIT_REPOSITORY https://hub.fastgit.org/gabime/spdlog
         VERSION 1.8.2
 )
 
@@ -34,7 +34,7 @@ CPMAddPackage(
 CPMAddPackage(
         NAME fmt
         GIT_TAG 6.1.2
-        GIT_REPOSITORY https://github.com.cnpmjs.org/fmtlib/fmt
+        GIT_REPOSITORY https://hub.fastgit.org/fmtlib/fmt
 )
 
 # ZLMediakit（流媒体协议提供框架）

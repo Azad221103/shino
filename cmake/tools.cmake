@@ -13,7 +13,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/CPM.cmake)
 if(USE_SANITIZER OR USE_STATIC_ANALYZER)
   CPMAddPackage(
     NAME StableCoder-cmake-scripts
-    GITHUB_REPOSITORY StableCoder/cmake-scripts
+          GIT_REPOSITORY https://hub.fastgit.org/StableCoder/cmake-scripts
     GIT_TAG 3d2d5a9fb26f0ce24e3e4eaeeff686ec2ecfb3fb
   )
 
@@ -67,8 +67,8 @@ endif()
 # enables CCACHE support through the USE_CCACHE flag possible values are: YES, NO or equivalent
 if(USE_CCACHE)
   CPMAddPackage(
-    NAME Ccache.cmake
-    GITHUB_REPOSITORY TheLartians/Ccache.cmake
-    VERSION 1.2.1
+          NAME Ccache.cmake
+          VERSION 1.2.1
+          GIT_REPOSITORY https://hub.fastgit.org/TheLartians/Ccache.cmake
   )
 endif()

@@ -6,5 +6,6 @@
 
 int main() {
     fmt::print("isdir: {}", adder::adder::isdir(R"(C:\code)"));
+
     return 0;
 }
